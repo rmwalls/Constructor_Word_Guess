@@ -1,0 +1,23 @@
+{
+  "name": "constructor_word_guess",
+  "version": "1.0.0",
+  "description": "Advanced JavaScript Assignment: Constructor Word Guess",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^6.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmwalls/Constructor_Word_Guess.git"
+  },
+  "author": "Robbi Walls",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmwalls/Constructor_Word_Guess/issues"
+  },
+  "homepage": "https://github.com/rmwalls/Constructor_Word_Guess#readme"
+}
