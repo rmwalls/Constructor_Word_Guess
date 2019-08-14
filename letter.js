@@ -29,22 +29,29 @@ A function that takes a character as an argument and checks it against the under
 
 //Letter constructor, string value to store the underlying character for the letter
 function Letter(letter){
-    this.letter = letter.toLowerCase(),
-    this.guessed = false, //boolean value stores whether letter has been guessed yet
+    this.letter = letter;
+    this.guessed = false; //boolean value stores whether letter has been guessed yet
 
-    this.toString = function(guessesLeft){
-        if(this.guessed === true){
-            return this.letter;
-        }else if(this.letter === " " || this.letter === "-"  || guessesLeft <=0){
-            return this.letter;
-        }else{
-            return "_"
-        }
+    this.getCharacter = function(){
+        return this.guessed ? this.letter : '_';
+        // if(this.guessed){
+        //     return this.letter;
+        // }else if(this.letter === " " || this.letter === "-"  || guessesLeft <=0){
+        //     return this.letter;
+        // }else{
+        //     return "_"
+        // }
     }
-    this.guess = function(guess){
-        if(guess === this.letter){
+    this.checkGuess = function(guess){
+        if(guess.toLowerCase() === this.letter.toLowerCase){
             this.guessed = true;  //updating stored boolean value to true if guessed correctly
         }
+        return this.isGuessed;
     }
 }
+
+// const letterA = new Letter('a');
+// console.log(letterA.checkGuess('a'));
+
+
 module.exports = Letter;

@@ -1,4 +1,4 @@
-var Letter = require("./letter.js");
+const Letter = require("./letter.js"); //executes the code of letter.js
 
 /*
 Word.js: Contains a constructor, Word that depends on the Letter constructor. This is used to create an object representing the current word the user is attempting to guess. That means the constructor should define:
@@ -14,38 +14,26 @@ Word.js should only require Letter.js
 */
 
 
-
 // var newWord = new Word() 
 // newWord.setWord("lord of the rings")
 // console.log(newWord.toString())
 
 
 //Word constructor
-function Word(){
-    this.wordArr = [],
-    this.setWord = function(wordStr){
-        for(var i = 0;i<wordStr.length;i++){
-           
-            let myletter = new Letter(wordStr[i]);
-            this.wordArr.push(myletter)
+function Word(word){
+    this.lettersArr = [/*multiple letter objects*/],
+    this.getPuzzle = function(){
+        const puzzle = [];
+        for(let i = 0; i<this.letterArr.length; i++){
+            const currentLetter = this.lettersArr[i];
+            const character  = currentLetter.getCharacter();
+            puzzle.push(character);
         }
+    return puzzle.join(' ');
     },
-    this.toString = function(guessesLeft){
-       
-        let displayWord = "";
-        for(var i = 0;i< this.wordArr.length;i++){
-           
-            displayWord = displayWord + this.wordArr[i].toString(guessesLeft) + " ";
-        }
-        return displayWord;
-    },
-    this.guess = function(guess){
-        for(var i = 0;i< this.wordArr.length;i++){
-            this.wordArr[i].guessLetter(guess);
-        }
-    },
-    this.remainingGuesses = 8,
-    this.guessedLetters = []    
+       this.guessLetter = function(letter) {
+           for (let i=0; i < this.letterArr[i]}; i++]
+       }
+};
 
-}
 module.exports = Word;
